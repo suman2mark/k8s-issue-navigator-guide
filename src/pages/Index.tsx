@@ -45,7 +45,7 @@ const Index = () => {
               <Button size="lg" asChild className="bg-white text-k8s-blue hover:bg-gray-100 hover:scale-105 transition-transform">
                 <Link to="/issues">Browse All Issues</Link>
               </Button>
-              <Button size="lg" variant="outline" asChild className="border-white text-white hover:bg-white/20 hover:scale-105 transition-transform">
+              <Button size="lg" variant="outline" asChild className="border-white text-k8s-blue hover:bg-white/20 hover:scale-105 transition-transform">
                 <a 
                   href="https://github.com/suman2mark/k8s-prodisssues"
                   target="_blank"
