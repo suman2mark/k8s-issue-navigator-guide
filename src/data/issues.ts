@@ -1,5 +1,5 @@
 
-import { Issue } from "@/lib/types";
+import { Issue, SeverityType, ComponentFilter, CategoryFilter } from "@/lib/types";
 
 // This is a sample of issues - in a real app, you would fetch all 500 from an API
 export const issues: Issue[] = [
