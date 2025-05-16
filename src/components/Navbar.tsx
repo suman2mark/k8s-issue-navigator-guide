@@ -24,7 +24,7 @@ const Navbar = () => {
           </div>
           <div>
             <Button variant="outline" className="mr-2 border-k8s-blue text-k8s-blue hover:bg-k8s-blue hover:text-white" asChild>
-              <a href="https://github.com/vijay2181/k8s-500-prod-issues" target="_blank" rel="noopener noreferrer">
+              <a href="https://github.com/suman2mark/k8s-prodisssues" target="_blank" rel="noopener noreferrer">
                 View on GitHub
               </a>
             </Button>
