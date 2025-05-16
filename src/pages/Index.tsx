@@ -34,7 +34,7 @@ const Index = () => {
               transition={{ delay: 0.4, duration: 0.5 }}
               className="text-xl md:text-2xl mb-8 max-w-3xl mx-auto"
             >
-              500 real-world Kubernetes production issues and their solutions, all in one place.
+               real-world Kubernetes production issues and their solutions, all in one place.
             </motion.p>
             <motion.div 
               initial={{ scale: 0.8, opacity: 0 }}
@@ -47,7 +47,7 @@ const Index = () => {
               </Button>
               <Button size="lg" variant="outline" asChild className="border-white text-white hover:bg-white/20 hover:scale-105 transition-transform">
                 <a 
-                  href="https://github.com/vijay2181/k8s-500-prod-issues"
+                  href="https://github.com/suman2mark/k8s-prodisssues"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
@@ -86,7 +86,7 @@ const Index = () => {
                 </div>
                 <h3 className="text-xl font-semibold mb-2">Real Production Issues</h3>
                 <p className="text-gray-600">
-                  All 500 issues are collected from real-world Kubernetes production environments and common failure scenarios.
+                  All issues are collected from real-world Kubernetes production environments and common failure scenarios.
                 </p>
               </motion.div>
               
@@ -208,7 +208,7 @@ const Index = () => {
                   </Avatar>
                 </div>
                 <h3 className="text-2xl font-bold text-k8s-navy mb-2">Markandeyulu</h3>
-                <p className="text-gray-600">Kubernetes Expert & Project Maintainer</p>
+                <p className="text-gray-600">Kubernetes Explorer & Project Maintainer</p>
                 <div className="mt-4 flex justify-center gap-3">
                   <a href="#" className="text-gray-500 hover:text-k8s-blue">
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" className="w-5 h-5">
@@ -241,7 +241,7 @@ const Index = () => {
                   SREs, and platform teams quickly resolve common Kubernetes issues encountered in production environments.
                 </p>
                 <p className="text-gray-600">
-                  With over a decade of experience managing large-scale Kubernetes deployments, Markandeyulu has documented the most 
+                  Markandeyulu has documented the most 
                   common and challenging issues faced in real-world scenarios, along with tested solutions and best practices.
                 </p>
               </motion.div>
@@ -260,7 +260,7 @@ const Index = () => {
           <div className="container-custom text-center">
             <h2 className="text-3xl font-bold mb-4">Ready to Solve Your Kubernetes Issues?</h2>
             <p className="text-xl mb-8 max-w-2xl mx-auto">
-              Start exploring our database of 500 real-world Kubernetes issues and their resolutions.
+              Start exploring our database of real-world Kubernetes issues and their resolutions.
             </p>
             <motion.div 
               whileHover={{ scale: 1.05 }}
