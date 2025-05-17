@@ -62,12 +62,39 @@ const Issues = () => {
               <div className="flex justify-between items-center mb-4">
                 <h2 className="text-lg font-semibold">
                   {filteredIssues.length} {filteredIssues.length === 1 ? 'Issue' : 'Issues'} Found
+                  <span className="ml-2 text-sm text-gray-500">out of {totalIssueCount} total issues</span>
                 </h2>
               </div>
               
               {filteredIssues.length > 0 ? (
                 <>
-                  <QuestionAnswerGraphic className="mb-8 hidden md:flex" />
+                  <div className="mb-8 p-4 bg-blue-50 rounded-lg border border-blue-100">
+                    <QuestionAnswerGraphic className="hidden md:flex" />
+                    <div className="mt-4 flex flex-col md:flex-row items-center justify-between">
+                      <div className="mb-4 md:mb-0 text-center md:text-left">
+                        <h3 className="text-lg font-semibold text-gray-800">Kubernetes Issue Collection</h3>
+                        <p className="text-gray-600">Compiled from real-world production environments</p>
+                      </div>
+                      <div className="flex items-center">
+                        <img 
+                          src="https://avatars.githubusercontent.com/u/16861456?v=4" 
+                          alt="GitHub Author" 
+                          className="h-10 w-10 rounded-full mr-3"
+                        />
+                        <div>
+                          <div className="font-medium">Vijay Kumar</div>
+                          <a 
+                            href="https://github.com/vijay2181/k8s-500-prod-issues" 
+                            target="_blank" 
+                            rel="noopener noreferrer"
+                            className="text-blue-600 hover:underline text-sm"
+                          >
+                            @vijay2181/k8s-500-prod-issues
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
                   <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                     {filteredIssues.map((issue) => (
                       <IssueCard key={issue.id} issue={issue} />
