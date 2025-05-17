@@ -1,12 +1,9 @@
-
 import { Link } from "react-router-dom";
 
 import { Button } from "@/components/ui/button";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { issues } from "@/data/issues";
-import { QuestionAnswerGraphic } from "@/components/QuestionAnswerGraphic";
-import { motion } from "framer-motion";
 
 const Index = () => {
   return (
@@ -15,40 +12,16 @@ const Index = () => {
 
       <main className="flex-grow bg-gray-50">
         <div className="container-custom py-20">
-          <motion.h1 
-            className="text-4xl md:text-5xl font-bold text-k8s-navy mb-4"
-            initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-          >
+          <h1 className="text-4xl md:text-5xl font-bold text-k8s-navy mb-4">
             K8s Troubleshooter
-          </motion.h1>
-          <motion.p 
-            className="text-lg text-gray-700 mb-8"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.5, delay: 0.2 }}
-          >
+          </h1>
+          <p className="text-lg text-gray-700 mb-8">
             Your go-to resource for resolving real-world Kubernetes production
             issues.
-          </motion.p>
-
-          <motion.div 
-            className="mb-16"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.3 }}
-          >
-            <QuestionAnswerGraphic />
-          </motion.div>
+          </p>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <motion.div 
-              className="bg-white rounded-lg shadow-md p-6"
-              initial={{ opacity: 0, x: -20 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.5, delay: 0.4 }}
-            >
+            <div className="bg-white rounded-lg shadow-md p-6">
               <h2 className="text-2xl font-semibold text-k8s-navy mb-4">
                 Facing a Kubernetes challenge?
               </h2>
@@ -63,14 +36,9 @@ const Index = () => {
                   Explore Issues
                 </Button>
               </Link>
-            </motion.div>
+            </div>
 
-            <motion.div 
-              className="bg-white rounded-lg shadow-md p-6"
-              initial={{ opacity: 0, x: 20 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.5, delay: 0.5 }}
-            >
+            <div className="bg-white rounded-lg shadow-md p-6">
               <h2 className="text-2xl font-semibold text-k8s-navy mb-4">
                 Contribute to the Community
               </h2>
@@ -93,26 +61,19 @@ const Index = () => {
                   Contribute on GitHub
                 </Button>
               </a>
-            </motion.div>
+            </div>
           </div>
 
-          {/* Explore Issues Button with animation */}
-          <motion.div
-            className="mt-8 text-center"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.6 }}
-          >
-            <Link to="/issues" className="inline-block">
-              <Button
-                size="lg"
-                asChild
-                className="bg-k8s-blue hover:bg-k8s-blue-dark text-white px-10 py-6 text-lg shadow-lg transform transition-transform duration-200 hover:scale-105"
-              >
-                <span>Explore All {issues.length} Issues</span>
-              </Button>
-            </Link>
-          </motion.div>
+          {/* Explore Issues Button - Fixed to remove framer-motion property */}
+          <Link to="/issues" className="block mt-8">
+            <Button
+              size="lg"
+              asChild
+              className="bg-k8s-blue hover:bg-k8s-blue-dark text-white px-10 py-6 text-lg shadow-lg transform transition-transform duration-200 hover:scale-105"
+            >
+              <span>Explore All {issues.length} Issues</span>
+            </Button>
+          </Link>
         </div>
       </main>
 
