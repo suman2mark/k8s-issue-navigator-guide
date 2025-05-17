@@ -16,5 +16,5 @@ export type ComponentFilter = "all" | string;
 
 export type CategoryFilter = "all" | string;
 
-// Updated to include "all" in the SeverityType filter options
+// Define SeverityFilter as a union of SeverityType and "all"
 export type SeverityFilter = SeverityType | "all";
