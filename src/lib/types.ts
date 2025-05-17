@@ -1,15 +1,20 @@
 
-export interface Issue {
+export type Issue = {
   id: number;
   title: string;
   description: string;
-  component?: string;
-  severity?: 'critical' | 'high' | 'medium' | 'low';
-  resolution?: string;
-  tags?: string[];
-  category?: string;
-}
+  component: string;
+  severity: SeverityType;
+  resolution: string;
+  tags: string[];
+  category: string;
+};
 
-export type SeverityType = 'critical' | 'high' | 'medium' | 'low' | 'all';
-export type ComponentFilter = string | 'all';
-export type CategoryFilter = string | 'all';
+export type SeverityType = "low" | "medium" | "high" | "critical";
+
+export type ComponentFilter = "all" | string;
+
+export type CategoryFilter = "all" | string;
+
+// Define SeverityFilter as a union of SeverityType and "all"
+export type SeverityFilter = SeverityType | "all";
