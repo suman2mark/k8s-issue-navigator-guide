@@ -7,13 +7,14 @@ import SearchBar from "@/components/SearchBar";
 import FilterBar from "@/components/FilterBar";
 import IssueCard from "@/components/IssueCard";
 import { searchIssues, issues } from "@/data/issues";
-import { ComponentFilter, SeverityType, CategoryFilter } from "@/lib/types";
+import { ComponentFilter, SeverityFilter, CategoryFilter } from "@/lib/types";
+import { QuestionAnswerGraphic } from "@/components/QuestionAnswerGraphic";
 
 const Issues = () => {
   const { toast } = useToast();
   const [query, setQuery] = useState("");
   const [component, setComponent] = useState<ComponentFilter>("all");
-  const [severity, setSeverity] = useState<SeverityType>("all");
+  const [severity, setSeverity] = useState<SeverityFilter>("all");
   const [category, setCategory] = useState<CategoryFilter>("all");
 
   const resetFilters = () => {
@@ -38,7 +39,7 @@ const Issues = () => {
         <div className="container-custom">
           <h1 className="text-2xl md:text-3xl font-bold mb-6">Kubernetes Issues</h1>
           <p className="text-gray-600 mb-8">
-            Browse through all 500 Kubernetes issues. Use the search and filters to find specific problems and their solutions.
+            Browse through all {issues.length} Kubernetes issues. Use the search and filters to find specific problems and their solutions.
           </p>
           
           <div className="space-y-6">
@@ -62,11 +63,14 @@ const Issues = () => {
               </div>
               
               {filteredIssues.length > 0 ? (
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                  {filteredIssues.map((issue) => (
-                    <IssueCard key={issue.id} issue={issue} />
-                  ))}
-                </div>
+                <>
+                  <QuestionAnswerGraphic className="mb-8 hidden md:flex" />
+                  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    {filteredIssues.map((issue) => (
+                      <IssueCard key={issue.id} issue={issue} />
+                    ))}
+                  </div>
+                </>
               ) : (
                 <div className="text-center py-12 bg-gray-50 rounded-lg">
                   <svg 
