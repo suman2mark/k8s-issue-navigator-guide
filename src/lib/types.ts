@@ -1,3 +1,4 @@
+
 export type Issue = {
   id: number;
   title: string;
@@ -14,3 +15,6 @@ export type SeverityType = "low" | "medium" | "high" | "critical";
 export type ComponentFilter = "all" | string;
 
 export type CategoryFilter = "all" | string;
+
+// Define SeverityFilter as a union of SeverityType and "all"
+export type SeverityFilter = SeverityType | "all";
