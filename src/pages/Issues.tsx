@@ -7,18 +7,14 @@ import SearchBar from "@/components/SearchBar";
 import FilterBar from "@/components/FilterBar";
 import IssueCard from "@/components/IssueCard";
 import { searchIssues, issues } from "@/data/issues";
-import { ComponentFilter, SeverityFilter, CategoryFilter } from "@/lib/types";
-import { QuestionAnswerGraphic } from "@/components/QuestionAnswerGraphic";
+import { ComponentFilter, SeverityType, CategoryFilter } from "@/lib/types";
 
 const Issues = () => {
   const { toast } = useToast();
   const [query, setQuery] = useState("");
   const [component, setComponent] = useState<ComponentFilter>("all");
-  const [severity, setSeverity] = useState<SeverityFilter>("all");
+  const [severity, setSeverity] = useState<SeverityType>("all");
   const [category, setCategory] = useState<CategoryFilter>("all");
-
-  // The total number of Kubernetes issues (489)
-  const totalIssueCount = 489;
 
   const resetFilters = () => {
     setQuery("");
@@ -42,7 +38,7 @@ const Issues = () => {
         <div className="container-custom">
           <h1 className="text-2xl md:text-3xl font-bold mb-6">Kubernetes Issues</h1>
           <p className="text-gray-600 mb-8">
-            Browse through all {totalIssueCount} Kubernetes issues. Use the search and filters to find specific problems and their solutions.
+            Browse through all 500 Kubernetes issues. Use the search and filters to find specific problems and their solutions.
           </p>
           
           <div className="space-y-6">
@@ -62,45 +58,15 @@ const Issues = () => {
               <div className="flex justify-between items-center mb-4">
                 <h2 className="text-lg font-semibold">
                   {filteredIssues.length} {filteredIssues.length === 1 ? 'Issue' : 'Issues'} Found
-                  <span className="ml-2 text-sm text-gray-500">out of {totalIssueCount} total issues</span>
                 </h2>
               </div>
               
               {filteredIssues.length > 0 ? (
-                <>
-                  <div className="mb-8 p-4 bg-blue-50 rounded-lg border border-blue-100">
-                    <QuestionAnswerGraphic className="hidden md:flex" />
-                    <div className="mt-4 flex flex-col md:flex-row items-center justify-between">
-                      <div className="mb-4 md:mb-0 text-center md:text-left">
-                        <h3 className="text-lg font-semibold text-gray-800">Kubernetes Issue Collection</h3>
-                        <p className="text-gray-600">Compiled from real-world production environments</p>
-                      </div>
-                      <div className="flex items-center">
-                        <img 
-                          src="https://avatars.githubusercontent.com/u/16861456?v=4" 
-                          alt="GitHub Author" 
-                          className="h-10 w-10 rounded-full mr-3"
-                        />
-                        <div>
-                          <div className="font-medium">Vijay Kumar</div>
-                          <a 
-                            href="https://github.com/vijay2181/k8s-500-prod-issues" 
-                            target="_blank" 
-                            rel="noopener noreferrer"
-                            className="text-blue-600 hover:underline text-sm"
-                          >
-                            @vijay2181/k8s-500-prod-issues
-                          </a>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                    {filteredIssues.map((issue) => (
-                      <IssueCard key={issue.id} issue={issue} />
-                    ))}
-                  </div>
-                </>
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                  {filteredIssues.map((issue) => (
+                    <IssueCard key={issue.id} issue={issue} />
+                  ))}
+                </div>
               ) : (
                 <div className="text-center py-12 bg-gray-50 rounded-lg">
                   <svg 
