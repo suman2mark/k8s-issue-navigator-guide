@@ -1,16 +1,15 @@
-
 import { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
-import { ComponentFilter, SeverityType, CategoryFilter } from '@/lib/types';
+import { ComponentFilter, SeverityFilter, CategoryFilter } from '@/lib/types';
 import { Filter } from 'lucide-react';
 import { getUniqueComponents, getUniqueSeverities, getUniqueCategories } from '@/data/issues';
 
 interface FilterBarProps {
   component: ComponentFilter;
   setComponent: (component: ComponentFilter) => void;
-  severity: SeverityType;
-  setSeverity: (severity: SeverityType) => void;
+  severity: SeverityFilter;
+  setSeverity: (severity: SeverityFilter) => void;
   category: CategoryFilter;
   setCategory: (category: CategoryFilter) => void;
   resetFilters: () => void;
@@ -82,7 +81,7 @@ const FilterBar = ({
           <label className="block text-sm font-medium text-gray-700 mb-1">Severity</label>
           <Select
             value={severity}
-            onValueChange={(value) => setSeverity(value as SeverityType)}
+            onValueChange={(value) => setSeverity(value as SeverityFilter)}
           >
             <SelectTrigger>
               <SelectValue placeholder="Select severity" />
