@@ -1,4 +1,3 @@
-
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import Navbar from "@/components/Navbar";
@@ -59,77 +58,7 @@ const Index = () => {
         </motion.section>
 
         {/* Features Section */}
-        <section className="py-16 bg-white">
-          <div className="container-custom">
-            <motion.h2 
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5 }}
-              className="text-3xl font-bold text-center mb-12"
-            >
-              Why Use K8s Troubleshooter?
-            </motion.h2>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              <motion.div 
-                initial={{ x: -50, opacity: 0 }}
-                whileInView={{ x: 0, opacity: 1 }}
-                viewport={{ once: true }}
-                transition={{ delay: 0.1, duration: 0.5 }}
-                whileHover={{ y: -10 }}
-                className="bg-k8s-light p-6 rounded-lg shadow-sm"
-              >
-                <div className="w-12 h-12 bg-k8s-blue rounded-lg flex items-center justify-center text-white mb-4">
-                  <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-                  </svg>
-                </div>
-                <h3 className="text-xl font-semibold mb-2">Real Production Issues</h3>
-                <p className="text-gray-600">
-                  All issues are collected from real-world Kubernetes production environments and common failure scenarios.
-                </p>
-              </motion.div>
-              
-              <motion.div 
-                initial={{ y: 50, opacity: 0 }}
-                whileInView={{ y: 0, opacity: 1 }}
-                viewport={{ once: true }}
-                transition={{ delay: 0.3, duration: 0.5 }}
-                whileHover={{ y: -10 }}
-                className="bg-k8s-light p-6 rounded-lg shadow-sm"
-              >
-                <div className="w-12 h-12 bg-k8s-blue rounded-lg flex items-center justify-center text-white mb-4">
-                  <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
-                  </svg>
-                </div>
-                <h3 className="text-xl font-semibold mb-2">Practical Solutions</h3>
-                <p className="text-gray-600">
-                  Each issue comes with detailed step-by-step solutions tested in production environments.
-                </p>
-              </motion.div>
-              
-              <motion.div 
-                initial={{ x: 50, opacity: 0 }}
-                whileInView={{ x: 0, opacity: 1 }}
-                viewport={{ once: true }}
-                transition={{ delay: 0.5, duration: 0.5 }}
-                whileHover={{ y: -10 }}
-                className="bg-k8s-light p-6 rounded-lg shadow-sm"
-              >
-                <div className="w-12 h-12 bg-k8s-blue rounded-lg flex items-center justify-center text-white mb-4">
-                  <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z" />
-                  </svg>
-                </div>
-                <h3 className="text-xl font-semibold mb-2">Well Categorized</h3>
-                <p className="text-gray-600">
-                  Issues are organized by component, severity, and category for easy navigation and filtering.
-                </p>
-              </motion.div>
-            </div>
-          </div>
-        </section>
+        <FeaturesSection />
         
         {/* Category Highlight Section */}
         <section className="py-16 bg-gray-50">
@@ -276,6 +205,87 @@ const Index = () => {
 
       <Footer />
     </div>
+  );
+};
+
+const FeaturesSection = () => {
+  return (
+    <section className="py-16 bg-white">
+      <div className="container-custom">
+        <motion.h2 
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+          className="text-3xl font-bold text-center mb-12"
+        >
+          Why Use K8s Troubleshooter?
+        </motion.h2>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <motion.div 
+            initial={{ x: -50, opacity: 0 }}
+            whileInView={{ x: 0, opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.1, duration: 0.5 }}
+            whileHover={{ y: -10 }}
+            className="bg-k8s-light p-6 rounded-lg shadow-sm"
+          >
+            <div className="w-12 h-12 bg-k8s-blue rounded-lg flex items-center justify-center text-white mb-4">
+              <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+              </svg>
+            </div>
+            <h3 className="text-xl font-semibold mb-2">Real Production Issues</h3>
+            <p className="text-gray-600">
+              All issues are collected from real-world Kubernetes production environments and common failure scenarios.
+            </p>
+          </motion.div>
+          
+          <motion.div 
+            initial={{ y: 50, opacity: 0 }}
+            whileInView={{ y: 0, opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.3, duration: 0.5 }}
+            whileHover={{ y: -10 }}
+            className="bg-k8s-light p-6 rounded-lg shadow-sm"
+          >
+            <div className="w-12 h-12 bg-k8s-blue rounded-lg flex items-center justify-center text-white mb-4">
+              <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+              </svg>
+            </div>
+            <h3 className="text-xl font-semibold mb-2">Practical Solutions</h3>
+            <p className="text-gray-600">
+              Each issue comes with detailed step-by-step solutions tested in production environments.
+            </p>
+          </motion.div>
+          
+          <motion.div 
+            initial={{ x: 50, opacity: 0 }}
+            whileInView={{ x: 0, opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.5, duration: 0.5 }}
+            whileHover={{ y: -10 }}
+            className="bg-k8s-light p-6 rounded-lg shadow-sm"
+          >
+            <div className="w-12 h-12 bg-k8s-blue rounded-lg flex items-center justify-center text-white mb-4">
+              <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z" />
+              </svg>
+            </div>
+            <h3 className="text-xl font-semibold mb-2">Well Categorized</h3>
+            <p className="text-gray-600">
+              Issues are organized by component, severity, and category for easy navigation and filtering.
+            </p>
+          </motion.div>
+        </div>
+        <div className="mt-12 text-center">
+          <Button size="lg" asChild className="bg-k8s-blue hover:bg-k8s-blue/90 text-white px-8 py-3 rounded-md transition-all">
+            <Link to="/issues">Browse All Issues</Link>
+          </Button>
+        </div>
+      </div>
+    </section>
   );
 };
 
