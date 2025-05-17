@@ -1,4 +1,4 @@
-import { Issue, SeverityType, ComponentFilter, CategoryFilter } from "@/lib/types";
+import { Issue, SeverityType, ComponentFilter, CategoryFilter, SeverityFilter } from "@/lib/types";
 
 // This is a complete collection of issues from the k8s-500-prod-issues repository
 // Source: https://github.com/vijay2181/k8s-500-prod-issues
@@ -545,6 +545,7 @@ export const issues: Issue[] = [
   },
   {
     id: 55,
+
     title: "Pod cannot mount NFS volumes",
     description: "Pods stay in ContainerCreating state due to failure mounting NFS volumes.",
     component: "Storage",
@@ -1188,7 +1189,7 @@ export function getUniqueSeverities(): string[] {
   return getUniqueValues<string>(issues, 'severity');
 }
 
-export function searchIssues(query: string, component: ComponentFilter, severity: SeverityType, category: CategoryFilter): Issue[] {
+export function searchIssues(query: string, component: ComponentFilter, severity: SeverityFilter, category: CategoryFilter): Issue[] {
   return issues.filter(issue => {
     // Text search
     const searchMatch = !query || 
