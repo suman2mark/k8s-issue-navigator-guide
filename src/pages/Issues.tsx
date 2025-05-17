@@ -7,14 +7,13 @@ import SearchBar from "@/components/SearchBar";
 import FilterBar from "@/components/FilterBar";
 import IssueCard from "@/components/IssueCard";
 import { searchIssues, issues } from "@/data/issues";
-import { ComponentFilter, SeverityFilter, CategoryFilter } from "@/lib/types";
-import { QuestionAnswerGraphic } from "@/components/QuestionAnswerGraphic";
+import { ComponentFilter, SeverityType, CategoryFilter } from "@/lib/types";
 
 const Issues = () => {
   const { toast } = useToast();
   const [query, setQuery] = useState("");
   const [component, setComponent] = useState<ComponentFilter>("all");
-  const [severity, setSeverity] = useState<SeverityFilter>("all");
+  const [severity, setSeverity] = useState<SeverityType>("all");
   const [category, setCategory] = useState<CategoryFilter>("all");
 
   const resetFilters = () => {
@@ -63,14 +62,11 @@ const Issues = () => {
               </div>
               
               {filteredIssues.length > 0 ? (
-                <>
-                  <QuestionAnswerGraphic className="mb-8 hidden md:flex" />
-                  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                    {filteredIssues.map((issue) => (
-                      <IssueCard key={issue.id} issue={issue} />
-                    ))}
-                  </div>
-                </>
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                  {filteredIssues.map((issue) => (
+                    <IssueCard key={issue.id} issue={issue} />
+                  ))}
+                </div>
               ) : (
                 <div className="text-center py-12 bg-gray-50 rounded-lg">
                   <svg 
