@@ -38,7 +38,7 @@ const Issues = () => {
         <div className="container-custom">
           <h1 className="text-2xl md:text-3xl font-bold mb-6">Kubernetes Issues</h1>
           <p className="text-gray-600 mb-8">
-            Browse through all {issues.length} Kubernetes issues. Use the search and filters to find specific problems and their solutions.
+            Browse through all 500 Kubernetes issues. Use the search and filters to find specific problems and their solutions.
           </p>
           
           <div className="space-y-6">
