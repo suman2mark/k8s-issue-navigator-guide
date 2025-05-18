@@ -9,7 +9,7 @@ const Footer = () => {
           <div>
             <h3 className="text-xl font-bold mb-4">K8s Troubleshooter</h3>
             <p className="text-gray-300">
-              A comprehensive collection of 500 real-world Kubernetes production issues and their resolutions.
+              A comprehensive collection of real-world Kubernetes production issues and their resolutions.
             </p>
           </div>
           <div>
@@ -27,7 +27,7 @@ const Footer = () => {
               </li>
               <li>
                 <a
-                  href="https://github.com/vijay2181/k8s-500-prod-issues"
+                  href="https://github.com/suman2mark/k8s-prodisssues"
                   className="text-gray-300 hover:text-white"
                   target="_blank"
                   rel="noopener noreferrer"
@@ -80,7 +80,7 @@ const Footer = () => {
           <p className="text-gray-400">
             Data sourced from{" "}
             <a
-              href="https://github.com/vijay2181/k8s-500-prod-issues"
+              href="https://github.com/suman2mark/k8s-prodisssues"
               className="text-gray-300 hover:text-white"
               target="_blank"
               rel="noopener noreferrer"
