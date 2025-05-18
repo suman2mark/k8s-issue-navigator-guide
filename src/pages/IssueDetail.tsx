@@ -1,11 +1,11 @@
-
 import { useParams, Link } from "react-router-dom";
-import { Button } from "@/components/ui/button";
+import { Button } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { issues } from "@/data/issues";
-import { ArrowLeft } from "lucide-react";
+import { ArrowLeft, FileText, MessageSquareText } from "lucide-react";
+import { motion } from "framer-motion";
 
 const getSeverityColor = (severity?: string) => {
   switch (severity) {
@@ -86,32 +86,51 @@ const IssueDetail = () => {
                 )}
               </div>
 
-              <div className="space-y-6">
-                <div>
-                  <h2 className="text-xl font-semibold mb-2">Description</h2>
-                  <div className="p-4 bg-gray-50 rounded-lg">
-                    <p className="text-gray-700">{issue.description}</p>
+              <div className="space-y-8">
+                <motion.div 
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.3 }}
+                  className="rounded-lg overflow-hidden border border-gray-200"
+                >
+                  <div className="bg-gradient-to-r from-k8s-blue/10 to-k8s-light p-4 flex items-center gap-3">
+                    <FileText className="text-k8s-blue h-5 w-5" />
+                    <h2 className="text-xl font-semibold">Description</h2>
                   </div>
-                </div>
+                  <div className="p-5 bg-white">
+                    <p className="text-gray-700 leading-relaxed">{issue.description}</p>
+                  </div>
+                </motion.div>
 
-                <div>
-                  <h2 className="text-xl font-semibold mb-2">Resolution</h2>
-                  <div className="p-4 bg-gray-50 rounded-lg">
-                    <p className="text-gray-700 whitespace-pre-line">{issue.resolution}</p>
+                <motion.div 
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.3, delay: 0.1 }}
+                  className="rounded-lg overflow-hidden border border-gray-200"
+                >
+                  <div className="bg-gradient-to-r from-green-50 to-blue-50 p-4 flex items-center gap-3">
+                    <MessageSquareText className="text-green-600 h-5 w-5" />
+                    <h2 className="text-xl font-semibold">Resolution</h2>
                   </div>
-                </div>
+                  <div className="p-5 bg-white">
+                    <p className="text-gray-700 whitespace-pre-line leading-relaxed">
+                      {issue.resolution}
+                    </p>
+                  </div>
+                </motion.div>
 
                 {issue.tags && issue.tags.length > 0 && (
                   <div>
                     <h2 className="text-xl font-semibold mb-2">Tags</h2>
                     <div className="flex flex-wrap gap-2">
                       {issue.tags.map((tag) => (
-                        <span
+                        <motion.span
                           key={tag}
-                          className="inline-block px-3 py-1 bg-gray-100 text-gray-800 rounded-full"
+                          whileHover={{ scale: 1.05 }}
+                          className="inline-block px-3 py-1 bg-gray-100 text-gray-800 rounded-full hover:bg-gray-200 transition-colors"
                         >
                           #{tag}
-                        </span>
+                        </motion.span>
                       ))}
                     </div>
                   </div>
