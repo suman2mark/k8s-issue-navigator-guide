@@ -50,7 +50,7 @@ const Issues = () => {
               <div className="w-full md:w-3/4">
                 <h2 className="text-xl font-semibold mb-2">All {totalIssueCount} Kubernetes Production Issues</h2>
                 <p className="text-gray-700 mb-3">
-                  Browse through all {totalIssueCount} Kubernetes production issues collected from real-world scenarios. 
+                  Browse through all Kubernetes production issues collected from real-world scenarios. 
                   Use the search and filters to find specific problems and their solutions.
                 </p>
                 <div className="text-sm text-gray-600">
