@@ -11,3 +11,5 @@ export interface Issue {
 }
 
 export type CategoryFilter = string | 'all';
+export type SeverityType = 'critical' | 'high' | 'medium' | 'low' | 'all';
+export type ComponentFilter = string | 'all';
