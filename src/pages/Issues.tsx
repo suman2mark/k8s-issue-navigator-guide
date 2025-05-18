@@ -48,10 +48,11 @@ const Issues = () => {
                 />
               </div>
               <div className="w-full md:w-3/4">
-                <h2 className="text-xl font-semibold mb-2">All {totalIssueCount} Kubernetes Production Issues</h2>
+                <h2 className="text-xl font-semibold mb-2">All Real-World Kubernetes Production Issues </h2>
                 <p className="text-gray-700 mb-3">
                   Browse through all Kubernetes production issues collected from real-world scenarios. 
-                  Use the search and filters to find specific problems and their solutions.
+                   Use the search and filters to quickly find relevant problems, root causes, and practical solutions.
+                    Special thanks to Vijay Kumar for compiling and sharing these valuable Kubernetes production issues with the community.
                 </p>
                 <div className="text-sm text-gray-600">
                   <p>Author: Vijay Kumar</p>
