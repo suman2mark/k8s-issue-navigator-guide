@@ -2,7 +2,7 @@
 import { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
-import { ComponentFilter, SeverityType, CategoryFilter } from '@/lib/types';
+import { ComponentFilter, SeverityType, CategoryFilter, standardKubernetesComponents } from '@/lib/types';
 import { Filter } from 'lucide-react';
 import { getUniqueComponents, getUniqueSeverities, getUniqueCategories } from '@/data/issues';
 
@@ -27,9 +27,10 @@ const FilterBar = ({
 }: FilterBarProps) => {
   const [isOpen, setIsOpen] = useState(false);
   
-  const components = ['all', ...getUniqueComponents()];
+  // Use the actual components from the data but sorted alphabetically
+  const components = ['all', ...getUniqueComponents().sort()];
   const severities = ['all', ...getUniqueSeverities()];
-  const categories = ['all', ...getUniqueCategories()];
+  const categories = ['all', ...getUniqueCategories().sort()];
 
   return (
     <div className="w-full bg-white rounded-lg shadow-sm border p-4">
@@ -68,7 +69,7 @@ const FilterBar = ({
             <SelectTrigger>
               <SelectValue placeholder="Select component" />
             </SelectTrigger>
-            <SelectContent>
+            <SelectContent className="max-h-[300px]">
               {components.map((comp) => (
                 <SelectItem key={comp} value={comp}>
                   {comp === 'all' ? 'All Components' : comp}
