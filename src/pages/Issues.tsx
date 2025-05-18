@@ -15,6 +15,9 @@ const Issues = () => {
   const [component, setComponent] = useState<ComponentFilter>("all");
   const [severity, setSeverity] = useState<SeverityType>("all");
   const [category, setCategory] = useState<CategoryFilter>("all");
+  
+  // Total number of issues from GitHub readme
+  const totalIssueCount = 489;
 
   const resetFilters = () => {
     setQuery("");
@@ -37,9 +40,29 @@ const Issues = () => {
       <main className="flex-grow bg-gray-50">
         <div className="container-custom">
           <h1 className="text-2xl md:text-3xl font-bold mb-6">Kubernetes Issues</h1>
-          <p className="text-gray-600 mb-8">
-            Browse through all 500 Kubernetes issues. Use the search and filters to find specific problems and their solutions.
-          </p>
+          
+          <div className="bg-k8s-blue/10 border border-k8s-blue/20 rounded-lg p-6 mb-8">
+            <div className="flex flex-col md:flex-row gap-6 items-center">
+              <div className="w-full md:w-1/4 flex justify-center">
+                <img 
+                  src="/lovable-uploads/cd8cff1f-5199-485b-aa33-4b457c006260.png" 
+                  alt="K8s Issues" 
+                  className="w-32 h-32 rounded-full object-cover border-4 border-white shadow-md"
+                />
+              </div>
+              <div className="w-full md:w-3/4">
+                <h2 className="text-xl font-semibold mb-2">All {totalIssueCount} Kubernetes Production Issues</h2>
+                <p className="text-gray-700 mb-3">
+                  Browse through all {totalIssueCount} Kubernetes production issues collected from real-world scenarios. 
+                  Use the search and filters to find specific problems and their solutions.
+                </p>
+                <div className="text-sm text-gray-600">
+                  <p>Author: Vijay Kumar</p>
+                  <p>Source: <a href="https://github.com/vijay2181/k8s-500-prod-issues" className="text-k8s-blue hover:underline" target="_blank" rel="noopener noreferrer">GitHub Repository</a></p>
+                </div>
+              </div>
+            </div>
+          </div>
           
           <div className="space-y-6">
             <SearchBar query={query} setQuery={setQuery} />
