@@ -6,14 +6,12 @@ import Footer from "@/components/Footer";
 import SearchBar from "@/components/SearchBar";
 import FilterBar from "@/components/FilterBar";
 import IssueCard from "@/components/IssueCard";
-import { searchIssues, issues } from "@/data/issues";
-import { ComponentFilter, SeverityType, CategoryFilter } from "@/lib/types";
+import { searchIssues } from "@/data/issues";
+import { CategoryFilter } from "@/lib/types";
 
 const Issues = () => {
   const { toast } = useToast();
   const [query, setQuery] = useState("");
-  const [component, setComponent] = useState<ComponentFilter>("all");
-  const [severity, setSeverity] = useState<SeverityType>("all");
   const [category, setCategory] = useState<CategoryFilter>("all");
   
   // Total number of issues from GitHub readme
@@ -21,8 +19,6 @@ const Issues = () => {
 
   const resetFilters = () => {
     setQuery("");
-    setComponent("all");
-    setSeverity("all");
     setCategory("all");
     
     toast({
@@ -31,7 +27,8 @@ const Issues = () => {
     });
   };
 
-  const filteredIssues = searchIssues(query, component, severity, category);
+  // Modified to only use category and query for filtering
+  const filteredIssues = searchIssues(query, "all", "all", category);
 
   return (
     <div className="flex flex-col min-h-screen">
@@ -68,10 +65,6 @@ const Issues = () => {
             <SearchBar query={query} setQuery={setQuery} />
             
             <FilterBar 
-              component={component}
-              setComponent={setComponent}
-              severity={severity}
-              setSeverity={setSeverity}
               category={category}
               setCategory={setCategory}
               resetFilters={resetFilters}
