@@ -55,7 +55,6 @@ const Issues = () => {
                     Special thanks to Vijay Kumar for compiling and sharing these valuable Kubernetes production issues with the community.
                 </p>
                 <div className="text-sm text-gray-600">
-                  <!-- <p>Author: Vijay Kumar</p> -->
                   <p>Source: <a href="https://github.com/vijay2181/k8s-500-prod-issues" className="text-k8s-blue hover:underline" target="_blank" rel="noopener noreferrer">GitHub Repository</a></p>
                 </div>
               </div>
