@@ -1,4 +1,3 @@
-
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import Navbar from "@/components/Navbar";
@@ -178,9 +177,11 @@ const Index = () => {
               transition={{ delay: 0.7, duration: 0.5 }}
               className="text-center mt-12"
             >
-              <Button size="lg" asChild whileHover={{ scale: 1.05 }} className="hover:scale-105 transition-transform">
-                <Link to="/issues">View All Categories</Link>
-              </Button>
+              <motion.div whileHover={{ scale: 1.05 }}>
+                <Button size="lg" asChild className="hover:scale-105 transition-transform">
+                  <Link to="/issues">View All Categories</Link>
+                </Button>
+              </motion.div>
             </motion.div>
           </div>
         </section>
